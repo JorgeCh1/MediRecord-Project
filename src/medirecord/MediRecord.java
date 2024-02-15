@@ -4,6 +4,8 @@
  */
 package medirecord;
 
+import ui.FrmLogin;
+
 /**
  *
  * @author Jorch
@@ -14,7 +16,9 @@ public class MediRecord {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        FrmLogin LoginFrame = new FrmLogin();
+        LoginFrame.setVisible(true);
+
     }
-    
+
 }
