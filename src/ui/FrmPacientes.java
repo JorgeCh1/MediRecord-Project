@@ -8,15 +8,13 @@ package ui;
  *
  * @author Jorch
  */
-public class FrmMedicos extends javax.swing.JInternalFrame {
+public class FrmPacientes extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form FrmMedicos
+     * Creates new form FrmPacientes
      */
-    public FrmMedicos() {
+    public FrmPacientes() {
         initComponents();
-        this.dispose();
-        setResizable(false);
     }
 
     /**
@@ -29,9 +27,9 @@ public class FrmMedicos extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        lblCodigoMedico = new javax.swing.JLabel();
+        lblCodigoPaciente = new javax.swing.JLabel();
         lblApellidos = new javax.swing.JLabel();
-        lblEspecialidad = new javax.swing.JLabel();
+        lblEdad = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
         tfNombre = new javax.swing.JTextField();
         tfApellidos = new javax.swing.JTextField();
@@ -42,23 +40,21 @@ public class FrmMedicos extends javax.swing.JInternalFrame {
         btnLimpiar = new javax.swing.JButton();
         lblid = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        lblEmail = new javax.swing.JLabel();
+        tfEspecialidad1 = new javax.swing.JTextField();
+        lblGenero = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
-        setBackground(new java.awt.Color(0, 0, 255));
-        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        setClosable(true);
-        setTitle("Registro de Médicos");
-        setPreferredSize(new java.awt.Dimension(1000, 602));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pacientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Médicos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
-
-        lblCodigoMedico.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblCodigoMedico.setText("Código de Médico:");
+        lblCodigoPaciente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblCodigoPaciente.setText("Código de Paciente:");
 
         lblApellidos.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblApellidos.setText("Apellidos:");
 
-        lblEspecialidad.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblEspecialidad.setText("Especialidad:");
+        lblEdad.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblEdad.setText("Edad:");
 
         lblNombre.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblNombre.setText("Nombres:");
@@ -126,7 +122,7 @@ public class FrmMedicos extends javax.swing.JInternalFrame {
         lblid.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblid.setText("id");
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Médicos"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Pacientes"));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -138,6 +134,27 @@ public class FrmMedicos extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 260, Short.MAX_VALUE)
         );
+
+        lblEmail.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblEmail.setText("Email:");
+
+        tfEspecialidad1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tfEspecialidad1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tfEspecialidad1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfEspecialidad1ActionPerformed(evt);
+            }
+        });
+        tfEspecialidad1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfEspecialidad1KeyTyped(evt);
+            }
+        });
+
+        lblGenero.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblGenero.setText("Género:");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -154,7 +171,7 @@ public class FrmMedicos extends javax.swing.JInternalFrame {
                                 .addComponent(tfApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblCodigoMedico)
+                                .addComponent(lblCodigoPaciente)
                                 .addGap(22, 22, 22)
                                 .addComponent(lblid))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -162,18 +179,26 @@ public class FrmMedicos extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32)
-                                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(36, 36, 36)
+                                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(35, 35, 35)
                                 .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(49, 49, 49)
+                                .addGap(52, 52, 52)
                                 .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblEspecialidad)
+                                .addComponent(lblEdad)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(tfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tfEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(tfEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblGenero)
+                                .addGap(18, 18, 18)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblEmail)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tfEspecialidad1, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -184,7 +209,7 @@ public class FrmMedicos extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCodigoMedico)
+                    .addComponent(lblCodigoPaciente)
                     .addComponent(lblid))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -196,15 +221,23 @@ public class FrmMedicos extends javax.swing.JInternalFrame {
                     .addComponent(tfApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(4, 4, 4)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEspecialidad)
+                    .addComponent(lblEdad)
                     .addComponent(tfEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(58, 58, 58)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblGenero)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEmail)
+                    .addComponent(tfEspecialidad1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
+                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -221,8 +254,6 @@ public class FrmMedicos extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-
-        getAccessibleContext().setAccessibleParent(this);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -255,21 +286,33 @@ public class FrmMedicos extends javax.swing.JInternalFrame {
         //Limpia los datos antes de ser ingresados a la tabla
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
+    private void tfEspecialidad1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfEspecialidad1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfEspecialidad1ActionPerformed
+
+    private void tfEspecialidad1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfEspecialidad1KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfEspecialidad1KeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnModificar;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblApellidos;
-    private javax.swing.JLabel lblCodigoMedico;
-    private javax.swing.JLabel lblEspecialidad;
+    private javax.swing.JLabel lblCodigoPaciente;
+    private javax.swing.JLabel lblEdad;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblGenero;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblid;
     private javax.swing.JTextField tfApellidos;
     private javax.swing.JTextField tfEspecialidad;
+    private javax.swing.JTextField tfEspecialidad1;
     private javax.swing.JTextField tfNombre;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,6 +4,10 @@
  */
 package ui;
 
+import entidades.Conexion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,7 +15,6 @@ import javax.swing.JOptionPane;
  * @author Jorch
  */
 public class FrmLogin extends javax.swing.JFrame {
-
     /**
      * Creates new form FrmLogin
      */
@@ -22,8 +25,8 @@ public class FrmLogin extends javax.swing.JFrame {
           this.setTitle("MediRecord Login ");
     }
     
-    void Logearse(){
-        new FrmPrincipal().setVisible(true);
+    void Logearse() {
+         new FrmPrincipal().setVisible(true);
     }
 
     /**
@@ -56,17 +59,7 @@ public class FrmLogin extends javax.swing.JFrame {
         LeftPanel.setBackground(new java.awt.Color(153, 255, 255));
         LeftPanel.setMinimumSize(new java.awt.Dimension(400, 500));
 
-        lblIcon.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:/Users/Jorge%20Chávez/Documents/NetBeansProjects/JavaProjectsUIA/MediRecord-Project/src/resources/MediLogo.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        lblIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jorge Chávez\\Documents\\NetBeansProjects\\JavaProjectsUIA\\MediRecord-Project\\src\\resources\\MediLogo.png")); // NOI18N
         lblIcon.setMinimumSize(new java.awt.Dimension(100, 100));
         lblIcon.setPreferredSize(new java.awt.Dimension(100, 100));
 
@@ -105,14 +98,11 @@ public class FrmLogin extends javax.swing.JFrame {
         RightPanel.setMinimumSize(new java.awt.Dimension(400, 500));
 
         lblLogin.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        lblLogin.setForeground(new java.awt.Color(0, 0, 0));
         lblLogin.setText("LOGIN");
 
         lblID.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        lblID.setForeground(new java.awt.Color(0, 0, 0));
         lblID.setText("Identificación");
 
-        txtID.setBackground(new java.awt.Color(255, 255, 255));
         txtID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,7 +112,6 @@ public class FrmLogin extends javax.swing.JFrame {
 
         btnIngresar.setBackground(new java.awt.Color(153, 255, 255));
         btnIngresar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnIngresar.setForeground(new java.awt.Color(0, 0, 0));
         btnIngresar.setText("Login");
         btnIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
