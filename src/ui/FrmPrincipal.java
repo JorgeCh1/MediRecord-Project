@@ -81,6 +81,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         mbArchivos.setText("Archivos");
 
         jMenu1.setText("Cerrar Sesión");
+        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu1MouseClicked(evt);
+            }
+        });
         mbArchivos.add(jMenu1);
 
         mbPrincipal.add(mbArchivos);
@@ -135,6 +140,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
         FrmMedicos ventana = new FrmMedicos();
         jContenedor.add(ventana);
         ventana.show();    }//GEN-LAST:event_jMenu3MouseClicked
+
+    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+     FrmLogin Login = new FrmLogin();
+     jContenedor.add(Login);
+     Login.show();
+    }//GEN-LAST:event_jMenu1MouseClicked
 
     /**
      * @param args the command line arguments
